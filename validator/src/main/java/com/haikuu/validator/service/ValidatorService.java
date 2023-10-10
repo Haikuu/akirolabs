@@ -6,7 +6,6 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class ValidatorService {
-
     public TokenValidation validateToken(String token) {
         String sanitizedToken = sanitizeToken(token);
         LuhnCheckDigit luhnCheckDigit = new LuhnCheckDigit();

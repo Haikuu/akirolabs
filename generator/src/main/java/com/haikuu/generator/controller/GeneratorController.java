@@ -13,6 +13,7 @@ import java.util.List;
 @RestController
 public class GeneratorController {
     private final GeneratorService generatorService;
+
     @Autowired
     public GeneratorController(GeneratorService generatorService) {
         this.generatorService = generatorService;
