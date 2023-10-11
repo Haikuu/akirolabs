@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.*;
 public class ValidatorController {
 
     private final ValidatorService validatorService;
+
     @Autowired
     public ValidatorController(ValidatorService validatorService) {
         this.validatorService = validatorService;

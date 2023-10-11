@@ -6,15 +6,16 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class ValidatorService {
+
     public TokenValidation validateToken(String token) {
         String sanitizedToken = sanitizeToken(token);
         LuhnCheckDigit luhnCheckDigit = new LuhnCheckDigit();
-         boolean isValid = luhnCheckDigit.isValid(sanitizedToken);
-         return new TokenValidation(isValid);
+        boolean isValid = luhnCheckDigit.isValid(sanitizedToken);
+        return new TokenValidation(isValid);
     }
 
     private String sanitizeToken(String token) {
-        if(token == null) {
+        if (token == null) {
             return null;
         }
         return token.replace("-", "");
